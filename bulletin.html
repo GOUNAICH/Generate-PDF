@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/bulletuin.css">
+        <title>Bulletin</title>
+        <style>
+            *{
+  background: #eff4fd;
+}
+#dvContainer {
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tfoot {
+    font-weight: bold;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+}
+
+span {
+    font-weight: bold;
+}
+.btn {
+  width: 14%;
+  height: 45px;
+  background:blueviolet ;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  font-size: 1em;
+  color: #fff;
+  font-weight: 500;
+  display: inline-block;
+  margin: 25px;
+}
+.input-box {
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 30%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f3f3f3;
+}
+
+.input-box label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.input-box input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.input-box input::placeholder {
+  color: #999;
+}
+
+
+
+
+
+        </style>
+        <script>
+            function calculateModuleGrade() {
+                
+                    // Get the values of the input boxes
+                    var grade1 = parseInt(document.getElementById('box1').value);
+                    var grade2 = parseInt(document.getElementById('box2').value);
+                    var grade3 = parseInt(document.getElementById('box3').value);
+                    var grade4 = parseInt(document.getElementById('box4').value);
+                    var grade5 = parseInt(document.getElementById('box5').value);
+                    var grade6 = parseInt(document.getElementById('box6').value);
+                    var grade7 = parseInt(document.getElementById('box7').value);
+                    var grade8 = parseInt(document.getElementById('box8').value);
+    
+                    // Calculate the sum of the grades and divide by 2 for each module
+    
+                    var moduleGrade1 = (grade1 + grade2) / 2;
+                    var moduleGrade2 = (grade3 + grade4) / 2;
+                    var moduleGrade3 = (grade5 + grade6) / 2;
+                    var moduleGrade4 = (grade7 + grade8) / 2;
+    
+                    // Update the module grade display for each module
+                    document.getElementById('module1').innerHTML = moduleGrade1;
+                    document.getElementById('module2').innerHTML = moduleGrade2;
+                    document.getElementById('module3').innerHTML = moduleGrade3;
+                    document.getElementById('module4').innerHTML = moduleGrade4;
+    
+                    // calcule somme et moyenne
+                    var somation = moduleGrade1 + moduleGrade2 + moduleGrade3 + moduleGrade4;
+                    var Moyenne = somation / 4 ;
+    
+                    // Update the module grade display for sum and moyenne
+                    document.getElementById('somme').innerHTML = somation;
+                    document.getElementById('moyenne').innerHTML = Moyenne;
+            }
+        </script>
+    </head>
+<body>
+    
+    <div><center><img src="Logo-removebg-preview.png" alt="Logo Bulletin" class="logo"></center></div>
+    <div id="dvContainer">
+        <center>
+        <form>
+            <div class="input-box">
+              <label for="Username">Username : </label>
+              <input id="Username" type="text" >
+              
+            </div>
+            <div class="input-box">
+                <label for="nbretd">N°Etudiant : </label>
+              <input id="nbretd" type="number" >
+              
+            </div>
+            <div class="input-box">
+                <label for="nbretd2">Annee Scolaire : </label>  
+                <input id="nbretd2" type="number" >
+                
+            </div>
+          </form>
+        </center>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Module</th>
+                <th>Matiere</th>
+                <th>Note de matiere</th>
+                <th>Note de Module</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--------------------------------------------------------------------------------->
+            <tr>
+                <td rowspan="2">M5</td><td>Systèmes</td>
+                <td><form><label for="box1"></label><input id="box1" type="number"></form></td>
+                <td rowspan="2"><span id="module1"></span></td>
+            </tr>
+
+            <tr>
+                <td>réseaux</td>
+                <td><form><label for="box2"></label><input id="box2" type="number"></form></td>
+            </tr>
+            <!---------------------------------------------------------------------------------->
+            <tr>
+                <td rowspan="2">M6</td><td>Méthode numérique</td>
+                <td><form><label for="box3"></label><input id="box3" type="number"></form></td>
+                <td rowspan="2"><span id="module2"></span></td>
+            </tr>
+
+            <tr>
+                <td>probabilité et statistique</td>
+                <td><form><label for="box4"></label><input id="box4" type="number"></form></td>
+            </tr>
+            <!---------------------------------------------------------------------------------->
+            <tr>
+                <td rowspan="2">M7</td><td>Systèmes d'information</td>
+                <td><form><label for="box5"></label><input id="box5" type="number"></form></td>
+                <td rowspan="2"><span id="module3"></span></td>
+            </tr>
+
+            <tr>
+                <td>Bases de données</td>
+                <td><form><label for="box6"></label><input id="box6" type="number"></form></td>
+            </tr>
+            <!---------------------------------------------------------------------------------->
+            <tr>
+                <td rowspan="2">M8</td><td>Structure de données</td>
+                <td><form><label for="box7"></label><input id="box7" type="number"></form></td>
+                <td rowspan="2"><span id="module4"></span></td>
+            </tr>
+            <tr>
+                <td>développement Web</td>
+                <td><form><label for="box8"></label><input id="box8" type="number"></form></td>
+            </tr>
+            <!---------------------------------------------------------------------------------->
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <td colspan="3">Somme</td>
+                <td><span id="somme"></span></td>
+            </tr>
+            <tr>
+                <td colspan="3">Moyenne</td>
+                <td><span id="moyenne"></span></td>
+            </tr>
+        </tfoot>
+    </table>
+    <center>
+    <button type="button" onclick="calculateModuleGrade()" class="btn">Calculer</button>
+    <button value="Print Div Contents" id="btnPrint" class="btn">Generate PDF</button>
+    <a href="calculatrice.html"><button class="btn">Page Calculatrice</button></a>
+    </center>
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>
+            $("#btnPrint").click(function () {
+            // Recuperer les inputes
+            var username = $("#Username").val();
+            var nbretd = $("#nbretd").val();
+            var nbretd2 = $("#nbretd2").val();
+            var box1 = $("#box1").val();
+            var box2 = $("#box2").val();
+            var box3 = $("#box3").val();
+            var box4 = $("#box4").val();
+            var box5 = $("#box5").val();
+            var box6 = $("#box6").val();
+            var box7 = $("#box7").val();
+            var box8 = $("#box8").val();
+
+            // Generate the HTML content to be inserted in the PDF
+            var divContents = `
+            
+            <div><center><img src="Logo-removebg-preview.png" alt="Logo Bulletin" class="logo"></center></div>
+                <center><p>Username: ${username}</p><br>
+                <p>N°Etudiant: ${nbretd}</p><br>
+                <p>Annee Scolaire: ${nbretd2}</p><br>
+                </center>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Module</th>
+                            <th>Matiere</th>
+                            <th>Note de matiere</th>
+                            <th>Note de Module</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tbody>
+                    
+                    <tr>
+                        <td rowspan="2">M5</td><td>Systèmes</td>
+                        <td>${box1}</td>
+                        <td rowspan="2"><span>${$("#module1").text()}</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>réseaux</td>
+                        <td>${box2}</td>
+                    </tr>
+                    
+                    <tr>
+                        <td rowspan="2">M6</td><td>Méthode numérique</td>
+                        <td>${box3}</td>
+                        <td rowspan="2"><span>${$("#module2").text()}</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>probabilité et statistique</td>
+                        <td>${box4}</td>
+                    </tr>
+                
+                    <tr>
+                        <td rowspan="2">M7</td><td>Systèmes d'information</td>
+                        <td>${box5}</td>
+                        <td rowspan="2"><span>${$("#module3").text()}</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Bases de données</td>
+                        <td>${box6}</td>
+                    </tr>
+                    
+                    <tr>
+                        <td rowspan="2">M8</td><td>Structure de données</td>
+                        <td>${box7}</td>
+                        <td rowspan="2"><span>${$("#module4").text()}</span></td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>développement Web</td>
+                        <td>${box8}</td>
+                    </tr>
+                
+                </tbody>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Somme</td>
+                            <td>${$("#somme").text()}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Moyenne</td>
+                            <td>${$("#moyenne").text()}</td>
+                        </tr>
+                    </tfoot>
+                </table>
+                
+            `;
+
+            // Open a new window to display the PDF
+            var printWindow = window.open('', '', 'height=500,width=1001');
+            printWindow.document.write('<html><head>');
+            printWindow.document.write('<style>');
+            printWindow.document.write(`
+                /* Add your CSS styles here */
+                    p{
+                        width: 30%;
+                        padding: 10px;
+                        font-size: 16px;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                    }
+                    table {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+
+                    th, td {
+                        padding: 8px;
+                        text-align: center;
+                    }
+
+                    th {
+                        background-color: #f2f2f2;
+                    }
+
+                    tr:nth-child(even) {
+                        background-color: #f2f2f2;
+                    }
+
+                    tfoot {
+                        font-weight: bold;
+                    }
+            `);
+            printWindow.document.write('</style>');
+            printWindow.document.write('</head><body>');
+            printWindow.document.write(divContents);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+        });
+</script>
+</body>
+</html>
